@@ -1,0 +1,14 @@
+services:
+  emby:
+    image: emby/embyserver:4.7.14.0
+    container_name: embyserver
+    restart: unless-stopped
+    environment:
+      - UID=1000
+      - GID=1000
+    volumes:
+      - /home/vekie/docker/emby:/config
+      - /home/media/shows:/mnt/shows
+      - /home/movies:/mnt/movies
+    expose:
+      - 8920
