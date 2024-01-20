@@ -3,6 +3,7 @@ services:
     image: emby/embyserver:4.7.14.0
     container_name: embyserver
     restart: unless-stopped
+    pull_policy: build
     environment:
       - UID=1000
       - GID=1000
